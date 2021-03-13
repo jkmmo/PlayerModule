@@ -19,8 +19,7 @@ function Player.new(s)
 			end
 		end,
 		__index = function(self,x)
-			if not Pt[x] then print(tostring(x),"Is a nil value") return nil end
-			return Pt[x] or game.Players.LocalPlayer[x]
+			return Pt[x] or game.Players.LocalPlayer[x] or nil
 		end,
 		__call = function(self)
 			self:Update()
